@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="WelcomeController">
+    <children>
+        <MenuBar VBox.vgrow="NEVER" />
+        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+            <children>
+                <Label contentDisplay="TOP" graphicTextGap="5.0" layoutX="160.0" layoutY="14.0" prefHeight="81.0" prefWidth="383.0" text="WELCOME" textAlignment="CENTER" AnchorPane.bottomAnchor="306.0" AnchorPane.leftAnchor="160.0" AnchorPane.rightAnchor="97.0" AnchorPane.topAnchor="14.0">
+                    <font>
+                        <Font name="Century Schoolbook" size="64.0" />
+                    </font>
+                    <textFill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                            <stops>
+                                <Stop color="#80481d" />
+                                <Stop color="#197cc2" offset="1.0" />
+                            </stops>
+                        </RadialGradient>
+                    </textFill>
+                </Label>
+                <TextField fx:id="text" layoutX="238.0" layoutY="126.0" prefHeight="31.0" prefWidth="195.0" promptText="please enter your name ..." AnchorPane.bottomAnchor="243.0" AnchorPane.leftAnchor="238.0" AnchorPane.rightAnchor="207.0" AnchorPane.topAnchor="126.0" />
+                <Text layoutX="186.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="name :" />
+                <Button layoutX="208.0" layoutY="206.0" mnemonicParsing="false" onAction="#create" text="create server" />
+                <Button layoutX="361.0" layoutY="206.0" mnemonicParsing="false" onAction="#join" text="join server" AnchorPane.bottomAnchor="163.0" AnchorPane.leftAnchor="361.0" AnchorPane.rightAnchor="190.0" AnchorPane.topAnchor="206.0" />
+            <Text fx:id="error" layoutX="324.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>
