@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="364.0" prefWidth="608.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CreateController">
+   <children>
+      <TextField fx:id="rounds" layoutX="203.0" layoutY="127.0" onKeyTyped="#setNumeric1" promptText="number of rounds" />
+      <TextField fx:id="port" layoutX="203.0" layoutY="198.0" onKeyTyped="#setNumeric" promptText="port" />
+      <Text layoutX="429.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="تعداد دورها" />
+      <Text layoutX="429.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="پورت" />
+      <Button layoutX="223.0" layoutY="264.0" mnemonicParsing="false" text="ساخت و ورود به بازی" />
+      <Label layoutX="117.0" layoutY="47.0" text="لطفا تعداد دور ها و پورت سرور را وارد کنید" textFill="#6818a1">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
