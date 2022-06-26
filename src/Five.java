@@ -2,6 +2,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import javafx.scene.control.TextField;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -12,24 +13,36 @@ public class Five implements Initializable {
     @FXML
     private AnchorPane anchorPane;
     @FXML
-    private Text sub1;
-    @FXML
-    private Text sub2;
-    @FXML
-    private Text sub3;
-    @FXML
-    private Text sub4;
-    @FXML
-    private Text sub5;
-    @FXML
     Text timer;
+    @FXML
+    TextField name;
+    @FXML
+    TextField family;
+    @FXML
+    TextField city;
+    @FXML
+    TextField country;
+    @FXML
+    TextField object;
+    @FXML
+    TextField flower;
+    @FXML
+    TextField clothes;
+    @FXML
+    TextField food;
+    @FXML
+    TextField animal;
+    @FXML
+    TextField fruit;
+    @FXML
+    TextField car;
 
-    public void setSubjects() {
-        sub1.setText(MakeGameController.selected.get(0));
-        sub2.setText(MakeGameController.selected.get(1));
-        sub3.setText(MakeGameController.selected.get(2));
-        sub4.setText(MakeGameController.selected.get(3));
-        sub5.setText(MakeGameController.selected.get(4));
+
+    public void setSubjects(TextField... textField) {
+        for (int i = 0; i < textField.length; i++) {
+            if (!MakeGameController.selected.contains(textField[i].getPromptText()))
+                textField[i].setDisable(true);
+        }
     }
 
     private int counter = 0;
@@ -37,7 +50,7 @@ public class Five implements Initializable {
 
     @FXML
     public void handleButtonAction() {
-        if(MakeGameController.minute == 0){
+        if (MakeGameController.minute == 0) {
             timer.setVisible(false);
             return;
         }
@@ -50,7 +63,7 @@ public class Five implements Initializable {
                 int min = counter / 60;
                 min %= 60;
                 timer.setText(String.format("%02d:%02d", min, seg));
-                if (min == MakeGameController.minute){
+                if (min == MakeGameController.minute) {
                     timer.setText("FINISH");
                     return;
                 }
@@ -60,8 +73,8 @@ public class Five implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        setSubjects();
         handleButtonAction();
+        setSubjects(name, family, clothes, car, city, country, flower, food, object, animal, fruit);
     }
 
     public void goBack() throws Exception {
@@ -71,7 +84,7 @@ public class Five implements Initializable {
         MakeGameController.counter = 0;
     }
 
-    public void exit(){
+    public void exit() {
         System.exit(0);
     }
 }

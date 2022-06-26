@@ -52,6 +52,7 @@ public class MakeGameController implements Initializable {
     static ArrayList<String> selected = new ArrayList<>();
     static int minute = 0;
     static int round = 0;
+    static int port1 = 0;
 
     public void setNumeric() {
         time.textProperty().addListener((observable, oldValue, newValue) -> {
@@ -199,12 +200,18 @@ public class MakeGameController implements Initializable {
         } else if (time.getText().equals("") && withTime.isSelected()) {
             text.setText("لطفا زمان بازی را مشخص کنید");
             text.setFill(Color.RED);
+        } else if (port.getText().equals("")) {
+            text.setText("لطفا پورت را وارد کنید");
+            text.setFill(Color.RED);
+        } else if (rounds.getText().equals("")) {
+            text.setText("لطفا تعداد دفعات تکرار را وارد کنید");
+            text.setFill(Color.RED);
         } else {
+            port1 = Integer.parseInt(port.getText());
+            round = Integer.parseInt(rounds.getText());
             System.out.println(selected);
-            if(!time.getText().equals(""))
+            if (!time.getText().equals(""))
                 minute = Integer.parseInt(time.getText());
-            if(!rounds.getText().equals(""))
-                round = Integer.parseInt(time.getText());
             Main main = new Main();
             main.changeScene(selected.size() + ".fxml");
         }
