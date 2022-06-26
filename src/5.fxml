@@ -140,5 +140,7 @@
             </children>
         </VBox>
         <Text layoutX="65.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="امتیازات" />
+      <Button layoutX="31.0" layoutY="24.0" mnemonicParsing="false" onAction="#goBack" text="بازگشت" />
+      <Button layoutX="855.0" layoutY="24.0" mnemonicParsing="false" onAction="#exit" text="finish" />
     </children>
 </AnchorPane>

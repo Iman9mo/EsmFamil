@@ -1,4 +1,5 @@
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
@@ -33,6 +34,8 @@ public class MakeGameController {
     TextField time;
     @FXML
     Text text;
+    @FXML
+    Button back;
     static int counter = 0;
     static ArrayList<String> selected = new ArrayList<>();
     static int minute;
@@ -179,5 +182,10 @@ public class MakeGameController {
             Main main = new Main();
             main.changeScene(selected.size() + ".fxml");
         }
+    }
+
+    public void goBack() throws Exception {
+        Main main = new Main();
+        main.changeScene("welcome.fxml");
     }
 }

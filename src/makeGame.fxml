@@ -26,5 +26,6 @@
         <CheckBox fx:id="objects" layoutX="493.0" layoutY="333.0" mnemonicParsing="false" onMousePressed="#selectObject" text="اشیا" />
         <Text fx:id="text" layoutX="146.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="انتخاب حداقل 5 مورد برای ساخت بازی الزامیست" />
         <Button layoutX="276.0" layoutY="384.0" mnemonicParsing="false" onAction="#make" text="بساز" />
+      <Button fx:id="back" layoutX="28.0" layoutY="29.0" mnemonicParsing="false" onAction="#goBack" text="بازگشت" />
     </children>
 </Pane>

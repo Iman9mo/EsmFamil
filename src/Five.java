@@ -1,3 +1,4 @@
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.input.MouseEvent;
@@ -38,12 +39,11 @@ public class Five implements Initializable {
 
     @FXML
     public void handleButtonAction(MouseEvent event) {
-
         Timer tm = new Timer();
         tm.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
-                counter++;
+                counter += 10;
                 int seg = counter % 60;
                 int min = counter / 60;
                 min %= 60;
@@ -56,5 +56,16 @@ public class Five implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+    }
+
+    public void goBack() throws Exception {
+        Main main = new Main();
+        main.changeScene("makeGame.fxml");
+        MakeGameController.selected.clear();
+        MakeGameController.counter = 0;
+    }
+
+    public void exit(){
+        System.exit(0);
     }
 }

@@ -11,4 +11,8 @@ public class JoinController {
             }
         });
     }
+    public void goBack() throws Exception {
+        Main main = new Main();
+        main.changeScene("welcome.fxml");
+    }
 }
