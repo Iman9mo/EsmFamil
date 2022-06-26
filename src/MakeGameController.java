@@ -1,13 +1,17 @@
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
-public class MakeGameController {
+public class MakeGameController implements Initializable {
     @FXML
     CheckBox name;
     @FXML
@@ -36,14 +40,33 @@ public class MakeGameController {
     Text text;
     @FXML
     Button back;
+    @FXML
+    RadioButton withTime;
+    @FXML
+    RadioButton withPlayer;
+    @FXML
+    TextField rounds;
+    @FXML
+    TextField port;
     static int counter = 0;
     static ArrayList<String> selected = new ArrayList<>();
-    static int minute;
+    static int minute = 0;
+    static int round = 0;
 
     public void setNumeric() {
         time.textProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue.matches("\\d*")) {
                 time.setText(newValue.replaceAll("[^\\d]", ""));
+            }
+        });
+        rounds.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue.matches("\\d*")) {
+                rounds.setText(newValue.replaceAll("[^\\d]", ""));
+            }
+        });
+        port.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue.matches("\\d*")) {
+                port.setText(newValue.replaceAll("[^\\d]", ""));
             }
         });
     }
@@ -173,12 +196,15 @@ public class MakeGameController {
         if (counter < 5) {
             text.setText("تعداد موضوعات کمتر از 5 می باشد!!!");
             text.setFill(Color.RED);
-        } else if (time.getText().equals("")) {
+        } else if (time.getText().equals("") && withTime.isSelected()) {
             text.setText("لطفا زمان بازی را مشخص کنید");
             text.setFill(Color.RED);
         } else {
             System.out.println(selected);
-            minute = Integer.parseInt(time.getText());
+            if(!time.getText().equals(""))
+                minute = Integer.parseInt(time.getText());
+            if(!rounds.getText().equals(""))
+                round = Integer.parseInt(time.getText());
             Main main = new Main();
             main.changeScene(selected.size() + ".fxml");
         }
@@ -187,5 +213,20 @@ public class MakeGameController {
     public void goBack() throws Exception {
         Main main = new Main();
         main.changeScene("welcome.fxml");
+    }
+
+    public void finishCondition() {
+        if (withTime.isSelected()) {
+            time.setDisable(false);
+            withPlayer.setSelected(false);
+        } else {
+            time.setDisable(true);
+            withTime.setSelected(false);
+        }
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        setNumeric();
     }
 }

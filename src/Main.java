@@ -27,7 +27,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Platform.setImplicitExit(true);
+        primaryStage.setResizable(false);
         primaryStage.setTitle("اسم و فامیل");
         stage = primaryStage;
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("welcome.fxml")));
@@ -44,5 +44,6 @@ public class Main extends Application {
     public void changeScene(String fxml) throws Exception {
         Parent pane = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(fxml)));
         stage.setScene(new Scene(pane));
+        stage.setResizable(false);
     }
 }

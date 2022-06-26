@@ -6,14 +6,14 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JoinController">
     <children>
-        <Button layoutX="261.0" layoutY="213.0" mnemonicParsing="false" text="پیوستن" />
+        <Button fx:id="join" layoutX="261.0" layoutY="213.0" mnemonicParsing="false" text="پیوستن" />
         <TextField fx:id="port" layoutX="314.0" layoutY="147.0" onKeyTyped="#setNumeric" prefHeight="32.0" prefWidth="74.0" />
         <Text layoutX="233.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="port" />
-        <Label layoutX="171.0" layoutY="63.0" text="لطفا پورت سرور را وارد کنید" textFill="#40c916">
+        <Label layoutX="132.0" layoutY="76.0" text="لطفا پورت سرور را وارد کنید" textFill="#40c916">
             <font>
-                <Font size="22.0" />
+                <Font name="2  Badr Bold" size="36.0" />
             </font>
         </Label>
-      <Button layoutX="22.0" layoutY="14.0" mnemonicParsing="false" onAction="#goBack" text="بازگشت" />
+      <Button fx:id="back" layoutX="22.0" layoutY="14.0" mnemonicParsing="false" onAction="#goBack" text="بازگشت" />
     </children>
 </AnchorPane>

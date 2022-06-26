@@ -6,141 +6,36 @@
 
 <AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onContextMenuRequested="#setSubjects" onDragDetected="#setSubjects" onDragDone="#setSubjects" onDragDropped="#setSubjects" onDragEntered="#setSubjects" onMouseClicked="#setSubjects" onMouseDragged="#setSubjects" onMouseEntered="#setSubjects" onMouseExited="#setSubjects" onMouseMoved="#setSubjects" onMousePressed="#setSubjects" prefHeight="823.0" prefWidth="924.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Five">
     <children>
-        <VBox layoutX="1011.0" layoutY="190.0" prefHeight="602.0" prefWidth="100.0" AnchorPane.leftAnchor="792.0" AnchorPane.rightAnchor="32.0">
-            <children>
-                <TextField prefHeight="40.0" />
-                <TextField prefHeight="40.0" prefWidth="126.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-            </children>
-        </VBox>
-        <Text fx:id="sub1" layoutX="829.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sub1" textAlignment="CENTER" />
-        <VBox layoutX="1000.0" layoutY="190.0" prefHeight="602.0" prefWidth="100.0" AnchorPane.leftAnchor="641.0" AnchorPane.rightAnchor="183.0">
-            <children>
-                <TextField prefHeight="40.0" />
-                <TextField prefHeight="40.0" prefWidth="126.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-            </children>
-        </VBox>
-        <VBox layoutX="487.0" layoutY="187.0" prefHeight="602.0" prefWidth="100.0" AnchorPane.leftAnchor="487.0" AnchorPane.rightAnchor="337.0">
-            <children>
-                <TextField prefHeight="40.0" prefWidth="126.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="100.0" />
-            </children>
-        </VBox>
-        <VBox layoutX="564.0" layoutY="190.0" prefHeight="602.0" prefWidth="100.0" AnchorPane.leftAnchor="344.0" AnchorPane.rightAnchor="480.0">
-            <children>
-                <TextField prefHeight="40.0" />
-                <TextField prefHeight="40.0" />
-                <TextField prefHeight="40.0" prefWidth="126.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-            </children>
-        </VBox>
-        <VBox layoutX="35.0" layoutY="190.0" prefHeight="602.0" prefWidth="100.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="789.0">
-            <children>
-                <TextField editable="false" prefHeight="40.0" text="round1" />
-                <TextField editable="false" prefHeight="40.0" text="round1" />
-                <TextField editable="false" prefHeight="40.0" prefWidth="126.0" text="round3" />
-                <TextField editable="false" prefHeight="40.0" prefWidth="298.0" />
-                <TextField editable="false" prefHeight="40.0" prefWidth="298.0" />
-                <TextField editable="false" prefHeight="40.0" prefWidth="298.0" />
-                <TextField editable="false" prefHeight="40.0" prefWidth="298.0" />
-                <TextField editable="false" prefHeight="40.0" prefWidth="298.0" />
-                <TextField editable="false" prefHeight="40.0" prefWidth="298.0" />
-                <TextField editable="false" prefHeight="40.0" prefWidth="298.0" />
-                <TextField editable="false" prefHeight="40.0" prefWidth="298.0" />
-                <TextField editable="false" prefHeight="40.0" prefWidth="298.0" />
-                <TextField editable="false" prefHeight="40.0" prefWidth="298.0" />
-                <TextField editable="false" prefHeight="40.0" prefWidth="298.0" />
-                <TextField editable="false" prefHeight="40.0" prefWidth="298.0" />
-                <TextField editable="false" prefHeight="40.0" prefWidth="298.0" />
-                <TextField editable="false" prefHeight="40.0" prefWidth="298.0" />
-            </children>
-        </VBox>
-        <Text fx:id="sub2" layoutX="679.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sub2" textAlignment="CENTER" />
-        <Text fx:id="sub3" layoutX="524.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sub3" textAlignment="CENTER" />
-        <Text fx:id="sub4" layoutX="370.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sub4" textAlignment="CENTER" wrappingWidth="53.192712128162384" />
-        <Text fx:id="sub5" layoutX="239.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sub5" textAlignment="CENTER" />
-        <Text fx:id="timer" layoutX="373.0" layoutY="89.0" onMouseClicked="#handleButtonAction" strokeType="OUTSIDE" strokeWidth="0.0" text="time" textAlignment="RIGHT" />
+        <Text fx:id="sub1" layoutX="829.0" layoutY="724.0" strokeType="OUTSIDE" strokeWidth="0.0" text="حیوان" textAlignment="CENTER" />
+        <Text fx:id="sub2" layoutX="829.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="فامیل" textAlignment="CENTER" />
+        <Text fx:id="sub3" layoutX="829.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="شهر" textAlignment="CENTER" />
+        <Text fx:id="sub4" layoutX="818.0" layoutY="373.0" strokeType="OUTSIDE" strokeWidth="0.0" text="کشور" textAlignment="CENTER" wrappingWidth="53.192712128162384" />
+        <Text fx:id="sub5" layoutX="829.0" layoutY="435.0" strokeType="OUTSIDE" strokeWidth="0.0" text="میوه" textAlignment="CENTER" />
+        <Text fx:id="timer" layoutX="373.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="time" textAlignment="RIGHT" />
         <TextField layoutX="625.0" layoutY="71.0" prefHeight="26.0" prefWidth="107.0" promptText="letter" />
         <Text layoutX="752.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="لطفا حرف را وارد کنید" textAlignment="RIGHT" wrappingWidth="153.328125" />
         <Text layoutX="508.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="نوبت" />
         <Text layoutX="124.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="number" />
         <Text layoutX="41.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="score:" />
-        <VBox layoutX="202.0" layoutY="190.0" prefHeight="602.0" prefWidth="100.0" AnchorPane.leftAnchor="202.0" AnchorPane.rightAnchor="622.0">
-            <children>
-                <TextField prefHeight="40.0" />
-                <TextField prefHeight="40.0" />
-                <TextField prefHeight="40.0" prefWidth="126.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-                <TextField prefHeight="40.0" prefWidth="298.0" />
-            </children>
-        </VBox>
         <Text layoutX="65.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="امتیازات" />
       <Button layoutX="31.0" layoutY="24.0" mnemonicParsing="false" onAction="#goBack" text="بازگشت" />
       <Button layoutX="855.0" layoutY="24.0" mnemonicParsing="false" onAction="#exit" text="finish" />
+      <Text fx:id="sub51" layoutX="829.0" layoutY="495.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ماشین" textAlignment="CENTER" />
+      <Text fx:id="sub11" layoutX="829.0" layoutY="663.0" strokeType="OUTSIDE" strokeWidth="0.0" text="گل" textAlignment="CENTER" />
+      <Text fx:id="sub12" layoutX="829.0" layoutY="551.0" strokeType="OUTSIDE" strokeWidth="0.0" text="پوشاک" textAlignment="CENTER" />
+      <Text fx:id="sub13" layoutX="832.0" layoutY="606.0" strokeType="OUTSIDE" strokeWidth="0.0" text="غذا" textAlignment="CENTER" />
+      <Text fx:id="sub14" layoutX="829.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="اسم" textAlignment="CENTER" />
+      <Text fx:id="sub15" layoutX="829.0" layoutY="779.0" strokeType="OUTSIDE" strokeWidth="0.0" text="اشیا" textAlignment="CENTER" />
+      <TextField layoutX="635.0" layoutY="224.0" prefHeight="26.0" prefWidth="107.0" promptText="فامیل" />
+      <TextField layoutX="635.0" layoutY="290.0" prefHeight="26.0" prefWidth="107.0" promptText="شهر" />
+      <TextField layoutX="635.0" layoutY="167.0" prefHeight="26.0" prefWidth="107.0" promptText="اسم" />
+      <TextField layoutX="635.0" layoutY="351.0" prefHeight="26.0" prefWidth="107.0" promptText="کشور" />
+      <TextField layoutX="635.0" layoutY="413.0" prefHeight="26.0" prefWidth="107.0" promptText="میوه" />
+      <TextField layoutX="635.0" layoutY="473.0" prefHeight="26.0" prefWidth="107.0" promptText="ماشین" />
+      <TextField layoutX="635.0" layoutY="529.0" prefHeight="26.0" prefWidth="107.0" promptText="پوشاک" />
+      <TextField layoutX="635.0" layoutY="584.0" prefHeight="26.0" prefWidth="107.0" promptText="غذا" />
+      <TextField layoutX="635.0" layoutY="634.0" prefHeight="26.0" prefWidth="107.0" promptText="گل" />
+      <TextField layoutX="635.0" layoutY="697.0" prefHeight="26.0" prefWidth="107.0" promptText="حیوان" />
+      <TextField layoutX="635.0" layoutY="757.0" prefHeight="26.0" prefWidth="107.0" promptText="اشیا" />
     </children>
 </AnchorPane>

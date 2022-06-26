@@ -6,9 +6,9 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MakeGameController">
     <children>
-        <Text layoutX="324.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="زمان هر دور از بازی(دقیقه)" />
-        <TextField fx:id="time" layoutX="224.0" layoutY="54.0" onAction="#setNumeric" onInputMethodTextChanged="#setNumeric" onKeyPressed="#setNumeric" onMouseClicked="#setNumeric" prefHeight="31.0" prefWidth="56.0" />
-        <Label layoutX="235.0" layoutY="100.0" text="موضوعات">
+        <Text layoutX="288.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="زمان هر دور از بازی(دقیقه)" />
+        <TextField fx:id="time" layoutX="188.0" layoutY="131.0" onAction="#setNumeric" onInputMethodTextChanged="#setNumeric" onKeyPressed="#setNumeric" onMouseClicked="#setNumeric" prefHeight="31.0" prefWidth="56.0" />
+        <Label layoutX="235.0" layoutY="177.0" text="موضوعات">
             <font>
                 <Font size="21.0" />
             </font>
@@ -24,8 +24,14 @@
         <CheckBox fx:id="flower" layoutX="172.0" layoutY="295.0" mnemonicParsing="false" onMousePressed="#selectFlower" text="گل" />
         <CheckBox fx:id="animal" layoutX="73.0" layoutY="295.0" mnemonicParsing="false" onMousePressed="#selectAnimal" text="حیوان" />
         <CheckBox fx:id="objects" layoutX="493.0" layoutY="333.0" mnemonicParsing="false" onMousePressed="#selectObject" text="اشیا" />
-        <Text fx:id="text" layoutX="146.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="انتخاب حداقل 5 مورد برای ساخت بازی الزامیست" />
-        <Button layoutX="276.0" layoutY="384.0" mnemonicParsing="false" onAction="#make" text="بساز" />
+        <Text fx:id="text" layoutX="165.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="انتخاب حداقل 5 مورد برای ساخت بازی الزامیست" />
+        <Button layoutX="269.0" layoutY="446.0" mnemonicParsing="false" onAction="#make" text="بساز" />
       <Button fx:id="back" layoutX="28.0" layoutY="29.0" mnemonicParsing="false" onAction="#goBack" text="بازگشت" />
+      <RadioButton fx:id="withPlayer" layoutX="308.0" layoutY="90.0" mnemonicParsing="false" onAction="#finishCondition" text="پایان بازی با اعلام بازیکن" />
+      <RadioButton fx:id="withTime" layoutX="96.0" layoutY="90.0" mnemonicParsing="false" onAction="#finishCondition" text="پایان بازی پس از اتمام زمان" />
+      <TextField fx:id="rounds" layoutX="220.0" layoutY="346.0" onAction="#setNumeric" onInputMethodTextChanged="#setNumeric" onKeyPressed="#setNumeric" onMouseClicked="#setNumeric" prefHeight="31.0" prefWidth="71.0" />
+      <Text layoutX="315.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="تعداد دفعات تکرار" />
+      <TextField fx:id="port" layoutX="220.0" layoutY="393.0" prefHeight="31.0" prefWidth="71.0" />
+      <Text layoutX="322.0" layoutY="415.0" strokeType="OUTSIDE" strokeWidth="0.0" text="پورت" />
     </children>
 </Pane>

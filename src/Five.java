@@ -1,7 +1,5 @@
-import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 
@@ -38,7 +36,11 @@ public class Five implements Initializable {
     MakeGameController mgc = new MakeGameController();
 
     @FXML
-    public void handleButtonAction(MouseEvent event) {
+    public void handleButtonAction() {
+        if(MakeGameController.minute == 0){
+            timer.setVisible(false);
+            return;
+        }
         Timer tm = new Timer();
         tm.scheduleAtFixedRate(new TimerTask() {
             @Override
@@ -48,14 +50,18 @@ public class Five implements Initializable {
                 int min = counter / 60;
                 min %= 60;
                 timer.setText(String.format("%02d:%02d", min, seg));
-                if (min == MakeGameController.minute)
+                if (min == MakeGameController.minute){
                     timer.setText("FINISH");
+                    return;
+                }
             }
         }, 1000, 1000);
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        setSubjects();
+        handleButtonAction();
     }
 
     public void goBack() throws Exception {
