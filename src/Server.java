@@ -3,11 +3,12 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 public class Server {
-    ServerSocket server;
+    static ServerSocket server;
     int serverPort = 123;
     public Server() {
         try {
             server = new ServerSocket(serverPort);
+            System.out.println(server.getLocalPort());
             System.out.println("Server Created!");
             System.out.println("waiting for client...");
             while (true) {

@@ -4,20 +4,20 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"   prefHeight="823.0" prefWidth="924.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Five">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="823.0" prefWidth="924.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GameController">
     <children>
-        <Text layoutX="829.0" layoutY="724.0" strokeType="OUTSIDE" strokeWidth="0.0" text="حیوان" textAlignment="CENTER" />
+        <Text layoutX="829.0" layoutY="719.0" strokeType="OUTSIDE" strokeWidth="0.0" text="حیوان" textAlignment="CENTER" />
         <Text layoutX="829.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="فامیل" textAlignment="CENTER" />
         <Text layoutX="829.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="شهر" textAlignment="CENTER" />
         <Text layoutX="818.0" layoutY="373.0" strokeType="OUTSIDE" strokeWidth="0.0" text="کشور" textAlignment="CENTER" wrappingWidth="53.192712128162384" />
         <Text layoutX="829.0" layoutY="435.0" strokeType="OUTSIDE" strokeWidth="0.0" text="میوه" textAlignment="CENTER" />
-        <Text fx:id="timer" layoutX="373.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="time" textAlignment="RIGHT" />
+        <Text fx:id="timer" layoutX="342.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="time" textAlignment="RIGHT" />
         <TextField layoutX="625.0" layoutY="71.0" prefHeight="26.0" prefWidth="107.0" promptText="letter" />
         <Text layoutX="752.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="لطفا حرف را وارد کنید" textAlignment="RIGHT" wrappingWidth="153.328125" />
-        <Text layoutX="508.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="نوبت" />
-        <Text layoutX="124.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="number" />
-        <Text layoutX="41.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="score:" />
-        <Text layoutX="65.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="امتیازات" />
+        <Text layoutX="502.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="نوبت" />
+        <Text layoutX="124.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="امتیاز کل :" />
+        <Text layoutX="47.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text=".........." />
+        <Text layoutX="500.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="امتیازات" />
       <Button layoutX="31.0" layoutY="24.0" mnemonicParsing="false" onAction="#goBack" text="بازگشت" />
       <Button layoutX="855.0" layoutY="24.0" mnemonicParsing="false" onAction="#exit" text="finish" />
       <Text layoutX="829.0" layoutY="495.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ماشین" textAlignment="CENTER" />
@@ -37,5 +37,16 @@
       <TextField fx:id="flower" layoutX="635.0" layoutY="634.0" prefHeight="26.0" prefWidth="107.0" promptText="گل" />
       <TextField fx:id="animal" layoutX="635.0" layoutY="697.0" prefHeight="26.0" prefWidth="107.0" promptText="حیوان" />
       <TextField fx:id="object" layoutX="635.0" layoutY="757.0" prefHeight="26.0" prefWidth="107.0" promptText="اشیا" />
+      <Text layoutX="500.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="امتیازات" />
+      <Text layoutX="500.0" layoutY="242.0" strokeType="OUTSIDE" strokeWidth="0.0" text="امتیازات" />
+      <Text layoutX="500.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" text="امتیازات" />
+      <Text layoutX="500.0" layoutY="369.0" strokeType="OUTSIDE" strokeWidth="0.0" text="امتیازات" />
+      <Text layoutX="500.0" layoutY="434.0" strokeType="OUTSIDE" strokeWidth="0.0" text="امتیازات" />
+      <Text layoutX="500.0" layoutY="487.0" strokeType="OUTSIDE" strokeWidth="0.0" text="امتیازات" />
+      <Text layoutX="500.0" layoutY="543.0" strokeType="OUTSIDE" strokeWidth="0.0" text="امتیازات" />
+      <Text layoutX="500.0" layoutY="598.0" strokeType="OUTSIDE" strokeWidth="0.0" text="امتیازات" />
+      <Text layoutX="500.0" layoutY="652.0" strokeType="OUTSIDE" strokeWidth="0.0" text="امتیازات" />
+      <Text layoutX="500.0" layoutY="715.0" strokeType="OUTSIDE" strokeWidth="0.0" text="امتیازات" />
+      <Text layoutX="500.0" layoutY="775.0" strokeType="OUTSIDE" strokeWidth="0.0" text="امتیازات" />
     </children>
 </AnchorPane>

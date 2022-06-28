@@ -33,9 +33,14 @@ public class WelcomeController implements Initializable {
 
     public void join() throws Exception {
         name = text.getText();
-        System.out.println(name);
-        Main main = new Main();
-        main.changeScene("join.fxml");
+        if (name.equals("")) {
+            error.setText("لطفا نام خود را وارد کنید");
+            error.setFill(Color.RED);
+        } else {
+            System.out.println(name);
+            Main main = new Main();
+            main.changeScene("join.fxml");
+        }
     }
 
     @Override

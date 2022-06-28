@@ -32,7 +32,7 @@ public class Main extends Application {
         stage = primaryStage;
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("welcome.fxml")));
         socket = new Socket("localhost", 123);
-        inputStream = socket.getInputStream();
+        System.out.println(socket.getLocalSocketAddress());
         outputStream = socket.getOutputStream();
         in = new DataInputStream(inputStream);
         out = new DataOutputStream(outputStream);

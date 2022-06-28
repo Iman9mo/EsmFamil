@@ -9,7 +9,7 @@ import java.util.ResourceBundle;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class Five implements Initializable {
+public class GameController implements Initializable {
     @FXML
     private AnchorPane anchorPane;
     @FXML
