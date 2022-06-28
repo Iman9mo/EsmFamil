@@ -16,11 +16,6 @@ import java.util.Objects;
 
 public class Main extends Application {
     private static Stage stage;
-    static Socket socket;
-    static InputStream inputStream;
-    static OutputStream outputStream;
-    static DataInputStream in;
-    static DataOutputStream out;
     public static void main(String[] args) {
         launch(args);
     }
@@ -31,11 +26,6 @@ public class Main extends Application {
         primaryStage.setTitle("اسم و فامیل");
         stage = primaryStage;
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("welcome.fxml")));
-        socket = new Socket("localhost", 123);
-        System.out.println(socket.getLocalSocketAddress());
-        outputStream = socket.getOutputStream();
-        in = new DataInputStream(inputStream);
-        out = new DataOutputStream(outputStream);
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.show();

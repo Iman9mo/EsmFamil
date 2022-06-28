@@ -9,7 +9,7 @@ import java.util.ResourceBundle;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class GameController implements Initializable {
+public class ClientGameController implements Initializable {
     @FXML
     private AnchorPane anchorPane;
     @FXML
@@ -36,14 +36,17 @@ public class GameController implements Initializable {
     TextField fruit;
     @FXML
     TextField car;
-    private int counter = 0;
+
 
     public static void setSubjects(TextField... textField) {
         for (int i = 0; i < textField.length; i++) {
-            if (!MakeGameController.selected.contains(textField[i].getPromptText()))
+            if (!JoinController.subjects.contains(textField[i].getPromptText()))
                 textField[i].setDisable(true);
         }
     }
+
+    private int counter = 0;
+
     @FXML
     public void handleButtonAction() {
         if (MakeGameController.minute == 0) {
@@ -55,10 +58,10 @@ public class GameController implements Initializable {
             @Override
             public void run() {
                 counter += 1;
-                int seg = counter % 60;
+                int sec = counter % 60;
                 int min = counter / 60;
                 min %= 60;
-                timer.setText(String.format("%02d:%02d", min, seg));
+                timer.setText(String.format("%02d:%02d", min, sec));
                 if (min == MakeGameController.minute) {
                     timer.setText("FINISH");
                     return;
@@ -74,11 +77,9 @@ public class GameController implements Initializable {
     }
 
     public void goBack() throws Exception {
-        Server.server.close();
+        JoinController.socket.close();
         Main main = new Main();
-        main.changeScene("makeGame.fxml");
-        MakeGameController.selected.clear();
-        MakeGameController.counter = 0;
+        main.changeScene("join.fxml");
     }
 
     public void exit() {

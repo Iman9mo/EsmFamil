@@ -210,8 +210,7 @@ public class MakeGameController implements Initializable {
         } else {
             port1 = Integer.parseInt(port.getText());
             round = Integer.parseInt(rounds.getText());
-//            ServerSocket socket = new ServerSocket(port1);
-//            Main.socket.connect(socket.getLocalSocketAddress());
+            new Server();
             System.out.println(selected);
             if (!time.getText().equals(""))
                 minute = Integer.parseInt(time.getText());
