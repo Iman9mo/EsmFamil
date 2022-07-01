@@ -1,6 +1,7 @@
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -35,5 +36,6 @@ public class Main extends Application {
         Parent pane = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(fxml)));
         stage.setScene(new Scene(pane));
         stage.setResizable(false);
+        stage.setOnCloseRequest(event -> System.exit(1));
     }
 }

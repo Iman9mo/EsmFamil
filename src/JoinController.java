@@ -17,12 +17,39 @@ public class JoinController implements Initializable {
     @FXML
     Button join;
     private int port1 = 0;
-    private DataInputStream dis = null;
-    private DataOutputStream dos = null;
-    private ObjectInputStream ois = null;
-    private ObjectOutputStream oos = null;
+    private int rounds = 0;
+    static int minute = 0;
+    private static boolean byTime;
+    private static DataInputStream dis = null;
+    private static DataOutputStream dos = null;
+    private static ObjectInputStream ois = null;
+    private static ObjectOutputStream oos = null;
     public static Socket socket;
     public static ArrayList<String> subjects = new ArrayList<>();
+
+    public static DataInputStream getDis() {
+        return dis;
+    }
+
+    public static DataOutputStream getDos() {
+        return dos;
+    }
+
+    public static ObjectInputStream getOis() {
+        return ois;
+    }
+
+    public static ObjectOutputStream getOos() {
+        return oos;
+    }
+
+    public static boolean isByTime() {
+        return byTime;
+    }
+
+    public static void setByTime(boolean byTime) {
+        JoinController.byTime = byTime;
+    }
 
     public void setNumeric() {
         port.textProperty().addListener((observable, oldValue, newValue) -> {
@@ -48,8 +75,17 @@ public class JoinController implements Initializable {
         Main main = new Main();
         System.out.println("client joined");
         ois = new ObjectInputStream(socket.getInputStream());
+        dis = new DataInputStream(socket.getInputStream());
+        dos = new DataOutputStream(socket.getOutputStream());
         subjects = (ArrayList<String>) ois.readObject();
         System.out.println(subjects);
+        rounds =  dis.read();
+        System.out.println(rounds);
+        minute = dis.read();
+        System.out.println(minute);
+        byTime = dis.readBoolean();
+        System.out.println(byTime);
+        dos.writeUTF(WelcomeController.getName());
         main.changeScene("ClientGame.fxml");
     }
 }

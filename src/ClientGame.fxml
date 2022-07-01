@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="823.0" prefWidth="924.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GameController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="823.0" prefWidth="924.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ClientGameController">
     <children>
         <Text layoutX="829.0" layoutY="719.0" strokeType="OUTSIDE" strokeWidth="0.0" text="حیوان" textAlignment="CENTER" />
         <Text layoutX="829.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="فامیل" textAlignment="CENTER" />
@@ -36,6 +36,6 @@
       <TextField fx:id="flower" layoutX="635.0" layoutY="634.0" prefHeight="26.0" prefWidth="107.0" promptText="گل" />
       <TextField fx:id="animal" layoutX="635.0" layoutY="697.0" prefHeight="26.0" prefWidth="107.0" promptText="حیوان" />
       <TextField fx:id="object" layoutX="635.0" layoutY="757.0" prefHeight="26.0" prefWidth="107.0" promptText="اشیا" />
-      <Button fx:id="startGame" layoutX="653.0" layoutY="119.0" mnemonicParsing="false" onAction="#setStart" text="شروع بازی" />
+      <Button fx:id="startGame" layoutX="655.0" layoutY="120.0" mnemonicParsing="false" onAction="#setStart" text="شروع بازی" />
     </children>
 </AnchorPane>

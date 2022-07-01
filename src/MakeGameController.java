@@ -7,7 +7,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 
-import java.net.ServerSocket;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -210,10 +209,10 @@ public class MakeGameController implements Initializable {
         } else {
             port1 = Integer.parseInt(port.getText());
             round = Integer.parseInt(rounds.getText());
-            new Server();
-            System.out.println(selected);
             if (!time.getText().equals(""))
                 minute = Integer.parseInt(time.getText());
+            new Server();
+            System.out.println(selected);
             Main main = new Main();
             main.changeScene("Game.fxml");
         }
@@ -228,9 +227,11 @@ public class MakeGameController implements Initializable {
         if (withTime.isSelected()) {
             time.setDisable(false);
             withPlayer.setSelected(false);
+            Server.setByTime(true);
         } else {
             time.setDisable(true);
             withTime.setSelected(false);
+            Server.setByTime(false);
         }
     }
 

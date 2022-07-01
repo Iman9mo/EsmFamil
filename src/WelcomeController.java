@@ -18,7 +18,11 @@ public class WelcomeController implements Initializable {
     Button joinServer;
     @FXML
     Button createServer;
-    static String name;
+    private static String name;
+
+    public static String getName() {
+        return name;
+    }
 
     public void create() throws Exception {
         name = text.getText();
