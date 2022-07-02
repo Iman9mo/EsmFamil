@@ -54,8 +54,11 @@ public class Server {
         return turn;
     }
 
-    public static void setTurn(int turn) {
-        Server.turn = turn;
+    public static void setTurn() {
+        if (turn == 1)
+            turn = 2;
+        else
+            turn = 1;
     }
 
     public static DataInputStream getDis() {

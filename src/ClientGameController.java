@@ -52,6 +52,12 @@ public class ClientGameController implements Initializable {
     Button finish;
     @FXML
     Text totalScore;
+    @FXML
+    Button nextRound;
+    @FXML
+    Text result;
+    private static int countRound = 1;
+    private static int turns = 1;
 
 
     public static void setSubjects(TextField... textField) {
@@ -69,7 +75,7 @@ public class ClientGameController implements Initializable {
             timer.setVisible(false);
             return;
         }
-        Timer tm = new Timer();
+        Timer tm = new Timer(true);
         tm.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
@@ -80,6 +86,13 @@ public class ClientGameController implements Initializable {
                 timer.setText(String.format("%02d:%02d", min, sec));
                 if (min == JoinController.minute) {
                     timer.setText("FINISH");
+                    try {
+                        tm.cancel();
+                        tm.purge();
+                        finishReceived(name, family, clothes, car, city, country, flower, food, object, animal, fruit);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                     return;
                 }
             }
@@ -90,7 +103,7 @@ public class ClientGameController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         setFinish();
         setSubjects(name, family, clothes, car, city, country, flower, food, object, animal, fruit);
-        if (Server.getTurn() == 1) {
+        if (turns == 1) {
             turn.setText("نوبت بازیکن1");
             start.setText("در انتظار تصمیم بازیکن دیگر...");
             startGame.setDisable(true);
@@ -124,7 +137,7 @@ public class ClientGameController implements Initializable {
     }
 
     public void setStart() throws IOException {
-        if (Server.getTurn() == 2) {
+        if (turns == 2) {
             if (letter.getText().equals("")) {
                 start.setText("حرف را وارد نکرده اید");
                 start.setFill(Color.RED);
@@ -133,7 +146,6 @@ public class ClientGameController implements Initializable {
                 start.setFill(Color.RED);
             } else {
                 JoinController.getDos().writeUTF(String.valueOf(letter.getText().charAt(0)));
-                Server.setTurn(1);
                 handleButtonAction();
                 waitForFinish();
             }
@@ -171,6 +183,8 @@ public class ClientGameController implements Initializable {
     }
 
     public void waitForFinish() {
+        if (JoinController.isByTime())
+            return;
         Runnable runnable = () -> {
             String message = "null";
             while (!message.equals("finish")) {
@@ -193,6 +207,29 @@ public class ClientGameController implements Initializable {
         };
         Thread thread = new Thread(runnable);
         thread.start();
+    }
+
+    public void setNextRound() throws Exception {
+        if (countRound < JoinController.getRounds()) {
+            countRound++;
+            setTurn();
+            Main main = new Main();
+            main.changeScene("ClientGame.fxml");
+        }
+        else {
+            int score1 = JoinController.getDis().readInt();
+            int score2 = JoinController.getDis().readInt();
+            result.setText("Game finished!\nTotal scores\nplayer1: " + score1 + "\nplayer2: " + score2);
+            result.setFill(Color.PURPLE);
+            result.setVisible(true);
+        }
+    }
+
+    public void setTurn() {
+        if (turns == 1)
+            turns = 2;
+        else
+            turns = 1;
     }
 }
 

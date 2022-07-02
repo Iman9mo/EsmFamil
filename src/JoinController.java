@@ -17,7 +17,7 @@ public class JoinController implements Initializable {
     @FXML
     Button join;
     private int port1 = 0;
-    private int rounds = 0;
+    private static int rounds = 0;
     static int minute = 0;
     private static boolean byTime;
     private static DataInputStream dis = null;
@@ -87,5 +87,9 @@ public class JoinController implements Initializable {
         System.out.println(byTime);
         dos.writeUTF(WelcomeController.getName());
         main.changeScene("ClientGame.fxml");
+    }
+
+    public static int getRounds() {
+        return rounds;
     }
 }

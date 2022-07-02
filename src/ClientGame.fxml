@@ -37,5 +37,11 @@
       <TextField fx:id="animal" layoutX="635.0" layoutY="697.0" prefHeight="26.0" prefWidth="107.0" promptText="حیوان" />
       <TextField fx:id="object" layoutX="635.0" layoutY="757.0" prefHeight="26.0" prefWidth="107.0" promptText="اشیا" />
       <Button fx:id="startGame" layoutX="655.0" layoutY="120.0" mnemonicParsing="false" onAction="#setStart" text="شروع بازی" />
+      <Button fx:id="nextRound" layoutX="47.0" layoutY="598.0" mnemonicParsing="false" onAction="#setNextRound" text="ورود به دور بعد" />
+      <Text fx:id="result" layoutX="237.0" layoutY="323.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" visible="false">
+         <font>
+            <Font size="60.0" />
+         </font>
+      </Text>
     </children>
 </AnchorPane>

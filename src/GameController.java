@@ -1,11 +1,10 @@
-import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
-import javafx.scene.control.TextField;
 
 import java.io.IOException;
 import java.net.URL;
@@ -52,8 +51,13 @@ public class GameController implements Initializable {
     Button finish;
     @FXML
     Text totalScore;
+    @FXML
+    Button nextRound;
+    @FXML
+    Text result;
     private int counter = 0;
     private static char letterChar;
+    private static int countRound = 1;
 
     public static void setSubjects(TextField... textField) {
         for (int i = 0; i < textField.length; i++) {
@@ -68,17 +72,24 @@ public class GameController implements Initializable {
             timer.setVisible(false);
             return;
         }
-        Timer tm = new Timer();
+        Timer tm = new Timer(true);
         tm.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
                 counter += 1;
-                int seg = counter % 60;
+                int sec = counter % 60;
                 int min = counter / 60;
                 min %= 60;
-                timer.setText(String.format("%02d:%02d", min, seg));
+                timer.setText(String.format("%02d:%02d", min, sec));
                 if (min == MakeGameController.minute) {
                     timer.setText("FINISH");
+                    try {
+                        tm.cancel();
+                        tm.purge();
+                        finishReceived(name, family, clothes, car, city, country, flower, food, object, animal, fruit);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                     return;
                 }
             }
@@ -135,7 +146,6 @@ public class GameController implements Initializable {
             } else {
                 Server.getDos().writeUTF(String.valueOf(letter.getText().charAt(0)));
                 letterChar = letter.getText().charAt(0);
-                Server.setTurn(2);
                 handleButtonAction();
                 waitForFinish();
             }
@@ -181,6 +191,8 @@ public class GameController implements Initializable {
     }
 
     public void waitForFinish() {
+        if (Server.isByTime())
+            return;
         Runnable runnable = () -> {
             String message = "null";
             while (!message.equals("finish")) {
@@ -201,5 +213,20 @@ public class GameController implements Initializable {
         };
         Thread thread = new Thread(runnable);
         thread.start();
+    }
+
+    public void setNextRound() throws Exception {
+        if (countRound < MakeGameController.round) {
+            Server.setTurn();
+            countRound++;
+            Main main = new Main();
+            main.changeScene("Game.fxml");
+        } else {
+            Server.getDos().writeInt(Server.getPlayer1().getScore());
+            Server.getDos().writeInt(Server.getPlayer2().getScore());
+            result.setText("Game finished!\nTotal scores\nplayer1: " + Server.getPlayer1().getScore() + "\nplayer2: " + Server.getPlayer2().getScore());
+            result.setFill(Color.PURPLE);
+            result.setVisible(true);
+        }
     }
 }
