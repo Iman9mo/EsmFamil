@@ -4,9 +4,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JoinController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url(&quot;w.jpg&quot;);" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JoinController">
     <children>
-        <Button fx:id="join" layoutX="261.0" layoutY="213.0" mnemonicParsing="false" onAction="#setJoin" text="پیوستن" />
+        <Button fx:id="join" layoutX="267.0" layoutY="200.0" mnemonicParsing="false" onAction="#setJoin" prefHeight="34.0" prefWidth="66.0" text="پیوستن" />
         <TextField fx:id="port" layoutX="314.0" layoutY="147.0" onKeyTyped="#setNumeric" prefHeight="32.0" prefWidth="74.0" />
         <Text layoutX="233.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="port" />
         <Label layoutX="132.0" layoutY="76.0" text="لطفا پورت سرور را وارد کنید" textFill="#40c916">

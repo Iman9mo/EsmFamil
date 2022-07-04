@@ -4,29 +4,80 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="823.0" prefWidth="924.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ClientGameController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="823.0" prefWidth="924.0" style="-fx-background-image: url(&quot;a.JPG&quot;);" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ClientGameController">
     <children>
-        <Text layoutX="829.0" layoutY="719.0" strokeType="OUTSIDE" strokeWidth="0.0" text="حیوان" textAlignment="CENTER" />
-        <Text layoutX="829.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="فامیل" textAlignment="CENTER" />
-        <Text layoutX="829.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="شهر" textAlignment="CENTER" />
-        <Text layoutX="818.0" layoutY="373.0" strokeType="OUTSIDE" strokeWidth="0.0" text="کشور" textAlignment="CENTER" wrappingWidth="53.192712128162384" />
-        <Text layoutX="829.0" layoutY="435.0" strokeType="OUTSIDE" strokeWidth="0.0" text="میوه" textAlignment="CENTER" />
-        <Text fx:id="timer" layoutX="342.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="time" textAlignment="RIGHT" />
+        <Text fill="#1fa4ab" layoutX="829.0" layoutY="719.0" strokeType="OUTSIDE" strokeWidth="0.0" text="حیوان" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Text>
+        <Text fill="#1fa4ab" layoutX="829.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="فامیل" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Text>
+        <Text fill="#1fa4ab" layoutX="829.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="شهر" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Text>
+        <Text fill="#1fa4ab" layoutX="818.0" layoutY="373.0" strokeType="OUTSIDE" strokeWidth="0.0" text="کشور" textAlignment="CENTER" wrappingWidth="53.192712128162384">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Text>
+        <Text fill="#1fa4ab" layoutX="829.0" layoutY="435.0" strokeType="OUTSIDE" strokeWidth="0.0" text="میوه" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Text>
+        <Text fx:id="timer" fill="#1fa4ab" layoutX="342.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="time" textAlignment="RIGHT">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Text>
         <TextField fx:id="letter" layoutX="635.0" layoutY="71.0" prefHeight="26.0" prefWidth="107.0" promptText="letter" />
-        <Text fx:id="start" layoutX="752.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="لطفا حرف را وارد کنید" textAlignment="RIGHT" wrappingWidth="153.328125" />
-        <Text fx:id="turn" layoutX="502.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="نوبت" />
-        <Text layoutX="124.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="امتیاز کل :" />
-        <Text fx:id="totalScore" layoutX="47.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text=".........." />
+        <Text fx:id="start" fill="#1fa4ab" layoutX="752.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="لطفا حرف را وارد کنید" textAlignment="RIGHT" wrappingWidth="153.328125">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Text>
+        <Text fx:id="turn" fill="#1fa4ab" layoutX="502.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="نوبت">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Text>
+        <Text fill="#1fa4ab" layoutX="124.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="امتیاز کل :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Text>
+        <Text fx:id="totalScore" fill="#1fa4ab" layoutX="47.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="..........">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font></Text>
       <Button layoutX="31.0" layoutY="24.0" mnemonicParsing="false" onAction="#goBack" text="بازگشت" />
-      <Button fx:id="finish" layoutX="855.0" layoutY="24.0" mnemonicParsing="false" onAction="#finishBtn" text="finish" />
-      <Text layoutX="829.0" layoutY="495.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ماشین" textAlignment="CENTER" />
-      <Text layoutX="829.0" layoutY="663.0" strokeType="OUTSIDE" strokeWidth="0.0" text="گل" textAlignment="CENTER" />
-      <Text layoutX="829.0" layoutY="551.0" strokeType="OUTSIDE" strokeWidth="0.0" text="پوشاک" textAlignment="CENTER" />
-      <Text layoutX="832.0" layoutY="606.0" strokeType="OUTSIDE" strokeWidth="0.0" text="غذا" textAlignment="CENTER" />
-      <Text layoutX="829.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="اسم" textAlignment="CENTER" />
-      <Text layoutX="829.0" layoutY="779.0" strokeType="OUTSIDE" strokeWidth="0.0" text="اشیا" textAlignment="CENTER" />
+      <Button fx:id="finish" layoutX="855.0" layoutY="24.0" mnemonicParsing="false" onAction="#finisher" text="finish" />
+      <Text fill="#1fa4ab" layoutX="829.0" layoutY="495.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ماشین" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Text>
+      <Text fill="#1fa4ab" layoutX="829.0" layoutY="663.0" strokeType="OUTSIDE" strokeWidth="0.0" text="گل" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Text>
+      <Text fill="#1fa4ab" layoutX="829.0" layoutY="551.0" strokeType="OUTSIDE" strokeWidth="0.0" text="پوشاک" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Text>
+      <Text fill="#1fa4ab" layoutX="832.0" layoutY="606.0" strokeType="OUTSIDE" strokeWidth="0.0" text="غذا" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Text>
+      <Text fill="#1fa4ab" layoutX="829.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="اسم" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Text>
+      <Text fill="#1fa4ab" layoutX="829.0" layoutY="779.0" strokeType="OUTSIDE" strokeWidth="0.0" text="اشیا" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Text>
       <TextField fx:id="family" layoutX="635.0" layoutY="224.0" prefHeight="26.0" prefWidth="107.0" promptText="فامیل" />
-      <TextField fx:id="city" layoutX="635.0" layoutY="290.0" prefHeight="26.0" prefWidth="107.0" promptText="شهر" />
+      <TextField fx:id="city" layoutX="635.0" layoutY="290.0" prefHeight="26.0" prefWidth="107.0" promptText="شهر">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></TextField>
       <TextField fx:id="name" layoutX="635.0" layoutY="167.0" prefHeight="26.0" prefWidth="107.0" promptText="اسم" />
       <TextField fx:id="country" layoutX="635.0" layoutY="351.0" prefHeight="26.0" prefWidth="107.0" promptText="کشور" />
       <TextField fx:id="fruit" layoutX="635.0" layoutY="413.0" prefHeight="26.0" prefWidth="107.0" promptText="میوه" />
@@ -38,7 +89,7 @@
       <TextField fx:id="object" layoutX="635.0" layoutY="757.0" prefHeight="26.0" prefWidth="107.0" promptText="اشیا" />
       <Button fx:id="startGame" layoutX="655.0" layoutY="120.0" mnemonicParsing="false" onAction="#setStart" text="شروع بازی" />
       <Button fx:id="nextRound" layoutX="47.0" layoutY="598.0" mnemonicParsing="false" onAction="#setNextRound" text="ورود به دور بعد" />
-      <Text fx:id="result" layoutX="237.0" layoutY="323.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" visible="false">
+      <Text fx:id="result" layoutX="47.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" visible="false" wrappingWidth="539.6836242675781">
          <font>
             <Font size="60.0" />
          </font>

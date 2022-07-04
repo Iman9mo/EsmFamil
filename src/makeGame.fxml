@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MakeGameController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" style="-fx-background-image: url(&quot;w.jpg&quot;);" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MakeGameController">
     <children>
         <Text layoutX="288.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="زمان هر دور از بازی(دقیقه)" />
         <TextField fx:id="time" layoutX="188.0" layoutY="131.0" onAction="#setNumeric" onInputMethodTextChanged="#setNumeric" onKeyPressed="#setNumeric" onMouseClicked="#setNumeric" prefHeight="31.0" prefWidth="56.0" />

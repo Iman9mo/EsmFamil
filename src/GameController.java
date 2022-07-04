@@ -58,6 +58,7 @@ public class GameController implements Initializable {
     private int counter = 0;
     private static char letterChar;
     private static int countRound = 1;
+    private boolean finisher = false;
 
     public static void setSubjects(TextField... textField) {
         for (int i = 0; i < textField.length; i++) {
@@ -167,27 +168,21 @@ public class GameController implements Initializable {
         GameController.letterChar = letterChar;
     }
 
-    public void finishBtn() throws IOException {
-        finisher(name, family, clothes, car, city, country, flower, food, object, animal, fruit);
-    }
-
-    public void finisher(TextField... textFields) throws IOException {
+    public void finisher() throws IOException {
         Server.getDos().writeUTF("finish");
-        for (int i = 0; i < textFields.length; i++) {
-            if (MakeGameController.selected.contains(textFields[i].getPromptText()))
-                Server.judgment(textFields[i].getText(), textFields[i].getPromptText());
-        }
-        totalScore.setText(Server.getPlayer1().getScore() + "");
-        Server.getDos().writeInt(Server.getPlayer2().getScore());
+        finisher = true;
     }
 
     public void finishReceived(TextField... textFields) throws IOException {
+        if (!finisher)
+            Server.getDos().writeUTF("finish");
         for (int i = 0; i < textFields.length; i++) {
             if (MakeGameController.selected.contains(textFields[i].getPromptText()))
                 Server.judgment(textFields[i].getText(), textFields[i].getPromptText());
         }
         totalScore.setText(Server.getPlayer1().getScore() + "");
         Server.getDos().writeInt(Server.getPlayer2().getScore());
+        finisher = false;
     }
 
     public void waitForFinish() {

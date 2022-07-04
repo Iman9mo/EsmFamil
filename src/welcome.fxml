@@ -8,7 +8,7 @@
 <VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="WelcomeController">
     <children>
         <MenuBar VBox.vgrow="NEVER" />
-        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" style="-fx-background-image: url(&quot;w.jpg&quot;);" VBox.vgrow="ALWAYS">
             <children>
                 <Label contentDisplay="TOP" graphicTextGap="5.0" layoutX="160.0" layoutY="14.0" prefHeight="81.0" prefWidth="383.0" text="WELCOME" textAlignment="CENTER" AnchorPane.bottomAnchor="306.0" AnchorPane.leftAnchor="160.0" AnchorPane.rightAnchor="97.0" AnchorPane.topAnchor="14.0">
                     <font>
@@ -27,7 +27,9 @@
                 <Text layoutX="186.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="name :" />
                 <Button fx:id="createServer" layoutX="208.0" layoutY="206.0" mnemonicParsing="false" onAction="#create" text="create server" />
                 <Button fx:id="joinServer" layoutX="361.0" layoutY="206.0" mnemonicParsing="false" onAction="#join" text="join server" AnchorPane.bottomAnchor="163.0" AnchorPane.leftAnchor="361.0" AnchorPane.rightAnchor="190.0" AnchorPane.topAnchor="206.0" />
-            <Text fx:id="error" layoutX="324.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Text fx:id="error" layoutX="174.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="290.60000000000014" />
+            <Button layoutX="295.0" layoutY="307.0" mnemonicParsing="false" onAction="#offline" text="offline" />
+            <Button layoutX="22.0" layoutY="353.0" mnemonicParsing="false" onAction="#mute" prefHeight="26.0" prefWidth="62.0" text="mute" />
             </children>
         </AnchorPane>
     </children>

@@ -47,6 +47,18 @@ public class WelcomeController implements Initializable {
         }
     }
 
+    public void offline() throws Exception {
+        name = text.getText();
+        if (name.equals("")) {
+            error.setText("لطفا نام خود را وارد کنید");
+            error.setFill(Color.RED);
+        } else {
+            System.out.println(name);
+            Main main = new Main();
+            main.changeScene("makeOffline.fxml");
+        }
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         joinServer.setStyle("-fx-background-color:\n" +
@@ -57,5 +69,9 @@ public class WelcomeController implements Initializable {
                 "    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );\n" +
                 "    -fx-text-fill: #395306;");
         createServer.setStyle("-fx-background-color: darkslateblue; -fx-text-fill: white;");
+    }
+
+    public void mute() {
+        Main.getMediaPlayer().pause();
     }
 }

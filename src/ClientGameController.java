@@ -1,11 +1,10 @@
-import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
-import javafx.scene.control.TextField;
 
 import java.io.IOException;
 import java.net.URL;
@@ -58,6 +57,7 @@ public class ClientGameController implements Initializable {
     Text result;
     private static int countRound = 1;
     private static int turns = 1;
+    private boolean finisher = false;
 
 
     public static void setSubjects(TextField... textField) {
@@ -159,20 +159,14 @@ public class ClientGameController implements Initializable {
             timer.setVisible(false);
     }
 
-    public void finishBtn() throws IOException {
-        finisher(name, family, clothes, car, city, country, flower, food, object, animal, fruit);
-    }
-
-    public void finisher(TextField... textFields) throws IOException {
+    public void finisher() throws IOException {
         JoinController.getDos().writeUTF("finish");
-        for (int i = 0; i < textFields.length; i++) {
-            if (JoinController.subjects.contains(textFields[i].getPromptText()))
-                JoinController.getDos().writeUTF(textFields[i].getText());
-        }
-        totalScore.setText(JoinController.getDis().readInt() + "");
+        finisher = true;
     }
 
     public void finishReceived(TextField... textFields) throws IOException {
+        if (!finisher)
+            JoinController.getDos().writeUTF("finish");
         for (int i = 0; i < textFields.length; i++) {
             if (JoinController.subjects.contains(textFields[i].getPromptText())) {
                 JoinController.getDos().writeUTF(textFields[i].getText());
@@ -180,6 +174,7 @@ public class ClientGameController implements Initializable {
             }
         }
         totalScore.setText(JoinController.getDis().readInt() + "");
+        finisher = false;
     }
 
     public void waitForFinish() {
