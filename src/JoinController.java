@@ -18,14 +18,14 @@ public class JoinController implements Initializable {
     Button join;
     private int port1 = 0;
     private static int rounds = 0;
-    static int minute = 0;
+    private static int minute = 0;
     private static boolean byTime;
     private static DataInputStream dis = null;
     private static DataOutputStream dos = null;
     private static ObjectInputStream ois = null;
     private static ObjectOutputStream oos = null;
-    public static Socket socket;
-    public static ArrayList<String> subjects = new ArrayList<>();
+    private static Socket socket;
+    private static ArrayList<String> subjects = new ArrayList<>();
 
     public static DataInputStream getDis() {
         return dis;
@@ -91,5 +91,57 @@ public class JoinController implements Initializable {
 
     public static int getRounds() {
         return rounds;
+    }
+
+    public int getPort1() {
+        return port1;
+    }
+
+    public void setPort1(int port1) {
+        this.port1 = port1;
+    }
+
+    public static void setRounds(int rounds) {
+        JoinController.rounds = rounds;
+    }
+
+    public static int getMinute() {
+        return minute;
+    }
+
+    public static void setMinute(int minute) {
+        JoinController.minute = minute;
+    }
+
+    public static void setDis(DataInputStream dis) {
+        JoinController.dis = dis;
+    }
+
+    public static void setDos(DataOutputStream dos) {
+        JoinController.dos = dos;
+    }
+
+    public static void setOis(ObjectInputStream ois) {
+        JoinController.ois = ois;
+    }
+
+    public static void setOos(ObjectOutputStream oos) {
+        JoinController.oos = oos;
+    }
+
+    public static Socket getSocket() {
+        return socket;
+    }
+
+    public static void setSocket(Socket socket) {
+        JoinController.socket = socket;
+    }
+
+    public static ArrayList<String> getSubjects() {
+        return subjects;
+    }
+
+    public static void setSubjects(ArrayList<String> subjects) {
+        JoinController.subjects = subjects;
     }
 }

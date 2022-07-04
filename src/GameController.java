@@ -1,8 +1,8 @@
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ProgressIndicator;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 
@@ -13,8 +13,6 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class GameController implements Initializable {
-    @FXML
-    private AnchorPane anchorPane;
     @FXML
     Text timer;
     @FXML
@@ -55,6 +53,8 @@ public class GameController implements Initializable {
     Button nextRound;
     @FXML
     Text result;
+    @FXML
+    ProgressIndicator progressIndicator;
     private int counter = 0;
     private static char letterChar;
     private static int countRound = 1;
@@ -62,14 +62,14 @@ public class GameController implements Initializable {
 
     public static void setSubjects(TextField... textField) {
         for (int i = 0; i < textField.length; i++) {
-            if (!MakeGameController.selected.contains(textField[i].getPromptText()))
+            if (!MakeGameController.getSelected().contains(textField[i].getPromptText()))
                 textField[i].setDisable(true);
         }
     }
 
     @FXML
     public void handleButtonAction() {
-        if (MakeGameController.minute == 0) {
+        if (MakeGameController.getMinute() == 0) {
             timer.setVisible(false);
             return;
         }
@@ -82,11 +82,13 @@ public class GameController implements Initializable {
                 int min = counter / 60;
                 min %= 60;
                 timer.setText(String.format("%02d:%02d", min, sec));
-                if (min == MakeGameController.minute) {
+                progressIndicator.setProgress(((60.0 * min) + sec) / (MakeGameController.getMinute() * 60));
+                if (min == MakeGameController.getMinute()) {
                     timer.setText("FINISH");
                     try {
                         tm.cancel();
                         tm.purge();
+                        finisher = true;
                         finishReceived(name, family, clothes, car, city, country, flower, food, object, animal, fruit);
                     } catch (IOException e) {
                         e.printStackTrace();
@@ -125,11 +127,11 @@ public class GameController implements Initializable {
     }
 
     public void goBack() throws Exception {
-        Server.server.close();
+        Server.getServer().close();
         Main main = new Main();
         main.changeScene("makeGame.fxml");
-        MakeGameController.selected.clear();
-        MakeGameController.counter = 0;
+        MakeGameController.getSelected().clear();
+        MakeGameController.setCounter(0);
     }
 
     public void exit() {
@@ -156,16 +158,14 @@ public class GameController implements Initializable {
     public void setFinish() {
         if (Server.isByTime())
             finish.setDisable(true);
-        else
+        else {
             timer.setVisible(false);
+            progressIndicator.setVisible(false);
+        }
     }
 
     public static char getLetterChar() {
         return letterChar;
-    }
-
-    public static void setLetterChar(char letterChar) {
-        GameController.letterChar = letterChar;
     }
 
     public void finisher() throws IOException {
@@ -177,8 +177,9 @@ public class GameController implements Initializable {
         if (!finisher)
             Server.getDos().writeUTF("finish");
         for (int i = 0; i < textFields.length; i++) {
-            if (MakeGameController.selected.contains(textFields[i].getPromptText()))
+            if (MakeGameController.getSelected().contains(textFields[i].getPromptText()))
                 Server.judgment(textFields[i].getText(), textFields[i].getPromptText());
+            textFields[i].setDisable(true);
         }
         totalScore.setText(Server.getPlayer1().getScore() + "");
         Server.getDos().writeInt(Server.getPlayer2().getScore());
@@ -211,7 +212,7 @@ public class GameController implements Initializable {
     }
 
     public void setNextRound() throws Exception {
-        if (countRound < MakeGameController.round) {
+        if (countRound < MakeGameController.getRound()) {
             Server.setTurn();
             countRound++;
             Main main = new Main();

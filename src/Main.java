@@ -20,6 +20,7 @@ public class Main extends Application {
     private static Stage stage;
     private static Media media = new Media(new File("music.mp3").toURI().toString());
     private static MediaPlayer mediaPlayer = new MediaPlayer(media);
+
     public static void main(String[] args) {
         launch(args);
     }

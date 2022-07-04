@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="823.0" prefWidth="924.0" style="-fx-background-image: url(&quot;a.JPG&quot;);" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GameController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="823.0" prefWidth="924.0" style="-fx-background-image: url(&quot;a.JPG&quot;);" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GameController">
     <children>
         <Text fill="#0e51ae" layoutX="829.0" layoutY="719.0" strokeType="OUTSIDE" strokeWidth="0.0" text="حیوان" textAlignment="CENTER">
          <font>
@@ -86,10 +86,11 @@
       <TextField fx:id="object" layoutX="635.0" layoutY="757.0" prefHeight="26.0" prefWidth="107.0" promptText="اشیا" />
       <Button fx:id="startGame" layoutX="653.0" layoutY="119.0" mnemonicParsing="false" onAction="#setStart" text="شروع بازی" />
       <Button fx:id="nextRound" layoutX="47.0" layoutY="598.0" mnemonicParsing="false" onAction="#setNextRound" text="ورود به دور بعد" />
-      <Text fx:id="result" layoutX="31.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" visible="false" wrappingWidth="571.0">
+      <Text fx:id="result" layoutX="31.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" visible="false" wrappingWidth="571.0">
          <font>
             <Font size="60.0" />
          </font>
       </Text>
+      <ProgressIndicator fx:id="progressIndicator" layoutX="242.0" layoutY="97.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="113.0" prefWidth="231.0" progress="0.0" />
     </children>
 </AnchorPane>

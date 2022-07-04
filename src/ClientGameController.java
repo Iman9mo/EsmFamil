@@ -1,8 +1,8 @@
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ProgressIndicator;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 
@@ -13,8 +13,6 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class ClientGameController implements Initializable {
-    @FXML
-    private AnchorPane anchorPane;
     @FXML
     Text timer;
     @FXML
@@ -55,6 +53,8 @@ public class ClientGameController implements Initializable {
     Button nextRound;
     @FXML
     Text result;
+    @FXML
+    ProgressIndicator progressIndicator;
     private static int countRound = 1;
     private static int turns = 1;
     private boolean finisher = false;
@@ -62,7 +62,7 @@ public class ClientGameController implements Initializable {
 
     public static void setSubjects(TextField... textField) {
         for (int i = 0; i < textField.length; i++) {
-            if (!JoinController.subjects.contains(textField[i].getPromptText()))
+            if (!JoinController.getSubjects().contains(textField[i].getPromptText()))
                 textField[i].setDisable(true);
         }
     }
@@ -71,7 +71,7 @@ public class ClientGameController implements Initializable {
 
     @FXML
     public void handleButtonAction() {
-        if (JoinController.minute == 0) {
+        if (JoinController.getMinute() == 0) {
             timer.setVisible(false);
             return;
         }
@@ -84,7 +84,8 @@ public class ClientGameController implements Initializable {
                 int min = counter / 60;
                 min %= 60;
                 timer.setText(String.format("%02d:%02d", min, sec));
-                if (min == JoinController.minute) {
+                progressIndicator.setProgress(((60.0 * min) + sec) / (JoinController.getMinute() * 60));
+                if (min == JoinController.getMinute()) {
                     timer.setText("FINISH");
                     try {
                         tm.cancel();
@@ -127,7 +128,7 @@ public class ClientGameController implements Initializable {
     }
 
     public void goBack() throws Exception {
-        JoinController.socket.close();
+        JoinController.getSocket().close();
         Main main = new Main();
         main.changeScene("join.fxml");
     }
@@ -155,8 +156,10 @@ public class ClientGameController implements Initializable {
     public void setFinish() {
         if (JoinController.isByTime())
             finish.setDisable(true);
-        else
+        else{
             timer.setVisible(false);
+            progressIndicator.setVisible(false);
+        }
     }
 
     public void finisher() throws IOException {
@@ -165,13 +168,14 @@ public class ClientGameController implements Initializable {
     }
 
     public void finishReceived(TextField... textFields) throws IOException {
-        if (!finisher)
+        if (!finisher && !JoinController.isByTime())
             JoinController.getDos().writeUTF("finish");
         for (int i = 0; i < textFields.length; i++) {
-            if (JoinController.subjects.contains(textFields[i].getPromptText())) {
+            if (JoinController.getSubjects().contains(textFields[i].getPromptText())) {
                 JoinController.getDos().writeUTF(textFields[i].getText());
                 //System.out.println(textFields[i].getText() + "  " + textFields[i].getPromptText());
             }
+            textFields[i].setDisable(true);
         }
         totalScore.setText(JoinController.getDis().readInt() + "");
         finisher = false;

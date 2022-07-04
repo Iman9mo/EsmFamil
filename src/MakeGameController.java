@@ -48,11 +48,11 @@ public class MakeGameController implements Initializable {
     TextField rounds;
     @FXML
     TextField port;
-    static int counter = 0;
-    static ArrayList<String> selected = new ArrayList<>();
-    static int minute = 0;
-    static int round = 0;
-    static int port1 = 0;
+    private static int counter = 0;
+    private static ArrayList<String> selected = new ArrayList<>();
+    private static int minute = 0;
+    private static int round = 0;
+    private static int port1 = 0;
 
     public void setNumeric() {
         time.textProperty().addListener((observable, oldValue, newValue) -> {
@@ -238,5 +238,45 @@ public class MakeGameController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setNumeric();
+    }
+
+    public static int getCounter() {
+        return counter;
+    }
+
+    public static void setCounter(int counter) {
+        MakeGameController.counter = counter;
+    }
+
+    public static ArrayList<String> getSelected() {
+        return selected;
+    }
+
+    public static void setSelected(ArrayList<String> selected) {
+        MakeGameController.selected = selected;
+    }
+
+    public static int getMinute() {
+        return minute;
+    }
+
+    public static void setMinute(int minute) {
+        MakeGameController.minute = minute;
+    }
+
+    public static int getRound() {
+        return round;
+    }
+
+    public static void setRound(int round) {
+        MakeGameController.round = round;
+    }
+
+    public static int getPort1() {
+        return port1;
+    }
+
+    public static void setPort1(int port1) {
+        MakeGameController.port1 = port1;
     }
 }

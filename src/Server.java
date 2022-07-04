@@ -6,7 +6,7 @@ import java.net.Socket;
 import java.util.ArrayList;
 
 public class Server {
-    public static ServerSocket server;
+    private static ServerSocket server;
     private static DataInputStream dis = null;
     private static DataOutputStream dos = null;
     private static ObjectInputStream ois = null;
@@ -19,7 +19,7 @@ public class Server {
     public Server() {
         Runnable runnable = () -> {
             try {
-                server = new ServerSocket(MakeGameController.port1);
+                server = new ServerSocket(MakeGameController.getPort1());
                 System.out.println(server.getLocalPort());
                 System.out.println("Server Created!");
                 System.out.println("waiting for client...");
@@ -27,10 +27,10 @@ public class Server {
                 oos = new ObjectOutputStream(client.getOutputStream());
                 dis = new DataInputStream(client.getInputStream());
                 System.out.println("Connected to New Client!");
-                oos.writeObject(MakeGameController.selected);
+                oos.writeObject(MakeGameController.getSelected());
                 dos = new DataOutputStream(client.getOutputStream());
-                dos.write(MakeGameController.round);
-                dos.write(MakeGameController.minute);
+                dos.write(MakeGameController.getRound());
+                dos.write(MakeGameController.getMinute());
                 dos.writeBoolean(byTime);
                 player2 = new Player(dis.readUTF(), 0);
                 System.out.println(player1.getName() + "  " + player2.getName());
@@ -124,5 +124,13 @@ public class Server {
         }
         fr.close();
         return false;
+    }
+
+    public static ServerSocket getServer() {
+        return server;
+    }
+
+    public static void setServer(ServerSocket server) {
+        Server.server = server;
     }
 }
